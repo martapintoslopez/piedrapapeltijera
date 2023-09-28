@@ -8,6 +8,10 @@ print("""Cuento hasta tres y escribes que quieres: piedra, papel o tijera.
 print("¿List@? (y/n)")
 input(">")
 
-def computerelection();
+def computerelection():
     new_election = int(random.randint(1,3))
+    print(new_election)
+
+
+computerelection()
 
