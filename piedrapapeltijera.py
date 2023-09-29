@@ -1,30 +1,35 @@
 import random
 
+play = 'n'
 print("¿Quieres jugar a piedra, papel o tijera? (y/n)")
-input(">")
+play = input(">")
+while play == 'y':
+    card = ['piedra','papel','tijera']
 
-card = ['Piedra','Papel','Tijera']
+    print("""Escribe que quieres: 
+          piedra, papel o tijera.""")
+    input(">")
 
-print("""Escribe que quieres: piedra, papel o tijera.
-      Los dos sacaremos que hemos elegido.""")
-print("¿List@? (y/n)")
-input("¿Piedra, papel o tijera?>")
+    #yourcard = card[]
+    print(card[1])
 
-#mycard = card[]
+    #Función para que devuelva la palabra (cambiar para usar la lista)
+    def whatisit(election):
+        if election == 0:
+            print("Piedra")
+        elif election == 1:
+            print("Papel")
+        elif election == 2:
+            print("Tijera")
 
-def whatisit(election):
-    if election == 0:
-        print("Piedra")
-    elif election == 1:
-        print("Papel")
-    elif election == 2:
-        print("Tijera")
+    def computerelection():
+        new_election = int(random.randint(0,2))
+        print("Mi elección es:")
+        whatisit(new_election)
 
-def computerelection():
-    new_election = int(random.randint(0,2))
-    print("My elección is:")
-    whatisit(new_election)
+    computerelection()
 
+    #FALTA LA PARTE DE COMPARAR Y VER QUIÉN GANA
 
-computerelection()
-
+    print("¿Quieres jugar de nuevo? (y/n)")
+    play = input(">")
