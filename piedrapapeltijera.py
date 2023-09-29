@@ -13,22 +13,28 @@ while play == 'y':
         \t\t {yourword}""")
         yourwordvalue = cards.index(yourword)
         
-        #Función para que devuelva la palabra que elige la computadora
+        #Función que devuelve la palabra que elige la computadora y compara con la nuestra
         def whatisit(election):
             print(f"\t\t\t {cards[election]}")
-            if yourwordvalue < election:
-                print(f"""A ver... {cards[election]} gana a {yourword}
-                        ¡TE HE GANADO!""")
-            elif yourwordvalue > election:
+            if yourwordvalue == 0 and election == 2:
                 print(f"""A ver... {yourword} gana a {cards[election]}
-                      ¡ME HAS GANADO!""")
+                  ¡ME HAS GANADO!""")      
+            elif yourwordvalue == 2 and election == 0:
+                print(f"""A ver... {cards[election]} gana a {yourword}
+                    ¡TE HE GANADO!""")          
             else:
-                print("\t\t\t\tIguales, empatamos")
+                if yourwordvalue < election:
+                    print(f"""A ver... {cards[election]} gana a {yourword}
+                        ¡TE HE GANADO!""")
+                elif yourwordvalue > election:
+                    print(f"""A ver... {yourword} gana a {cards[election]}
+                      ¡ME HAS GANADO!""")
+                else:
+                    print("\t\tIguales, empatamos")
 
         def computerelection():
             new_election = int(random.randint(0,2))
             print("\t\tMi elección es:")
-            print(new_election)
             whatisit(new_election)
 
         computerelection()
