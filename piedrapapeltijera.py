@@ -8,12 +8,15 @@ print("""Cuento hasta tres y escribes que quieres: piedra, papel o tijera.
 print("¿List@? (y/n)")
 input(">")
 
+Card = ['Piedra','Papel','Tijera']
+
+
 def whatisit(election):
-    if election == 1:
+    if election == 0:
         print("Piedra")
-    elif election == 2:
+    elif election == 1:
         print("Papel")
-    elif election == 3:
+    elif election == 2:
         print("Tijera")
 
 def computerelection():
