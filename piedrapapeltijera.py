@@ -3,13 +3,14 @@ import random
 print("¿Quieres jugar a piedra, papel o tijera? (y/n)")
 input(">")
 
-print("""Cuento hasta tres y escribes que quieres: piedra, papel o tijera.
-      Los dos sacaremos a la vez que hemos elegido.""")
+card = ['Piedra','Papel','Tijera']
+
+print("""Escribe que quieres: piedra, papel o tijera.
+      Los dos sacaremos que hemos elegido.""")
 print("¿List@? (y/n)")
-input(">")
+input("¿Piedra, papel o tijera?>")
 
-Card = ['Piedra','Papel','Tijera']
-
+#mycard = card[]
 
 def whatisit(election):
     if election == 0:
@@ -20,9 +21,9 @@ def whatisit(election):
         print("Tijera")
 
 def computerelection():
-    new_election = int(random.randint(1,3))
-    print(new_election)
-
+    new_election = int(random.randint(0,2))
+    print("My elección is:")
+    whatisit(new_election)
 
 
 computerelection()
