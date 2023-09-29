@@ -9,28 +9,29 @@ while play == 'y':
           piedra, papel o tijera.""")
     yourword = input(">")
     if yourword in cards:
-        print(f"Has elegido:{yourword}")
-            
-        #yourcard = card[]
-        #print(card[1])
-
-        #Función para que devuelva la palabra (cambiar para usar la lista)
+        print(f"""\t\tHas elegido:
+        \t\t {yourword}""")
+        yourwordvalue = cards.index(yourword)
+        
+        #Función para que devuelva la palabra que elige la computadora
         def whatisit(election):
-            if election == 0:
-                print("Piedra")
-            elif election == 1:
-                print("Papel")
-            elif election == 2:
-                print("Tijera")
+            print(f"\t\t\t {cards[election]}")
+            if yourwordvalue < election:
+                print(f"""A ver... {cards[election]} gana a {yourword}
+                        ¡TE HE GANADO!""")
+            elif yourwordvalue > election:
+                print(f"""A ver... {yourword} gana a {cards[election]}
+                      ¡ME HAS GANADO!""")
+            else:
+                print("\t\t\t\tIguales, empatamos")
 
         def computerelection():
             new_election = int(random.randint(0,2))
-            print("Mi elección es:")
+            print("\t\tMi elección es:")
+            print(new_election)
             whatisit(new_election)
 
         computerelection()
-
-    #FALTA LA PARTE DE COMPARAR Y VER QUIÉN GANA
     
     else:
         print("No te he entendido")
