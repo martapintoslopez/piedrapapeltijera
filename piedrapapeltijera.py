@@ -37,3 +37,5 @@ while play == 'y':
 
     print("¿Quieres jugar de nuevo? (y/n)")
     play = input(">")
+
+print("Bye!")
